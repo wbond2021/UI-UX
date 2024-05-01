@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building/Home Automation App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Building/Home Automation App</h1>
+    </header>
+    <main>
+        <section id="energy-monitor">
+            <h2>Energy Monitor</h2>
+            <p id="energy-usage"></p>
+        </section>
+        <section id="lighting-control">
+            <h2>Lighting Control</h2>
+            <div class="light-control">
+                <label for="light-switch-1">Turn on/off Light 1:</label>
+                <input type="checkbox" id="light-switch-1">
+                <p id="light-status-1" class="light-status"></p>
+            </div>
+            <div class="light-control">
+                <label for="light-switch-2">Turn on/off Light 2:</label>
+                <input type="checkbox" id="light-switch-2">
+                <p id="light-status-2" class="light-status"></p>
+            </div>
+            <div class="light-control">
+                <label for="light-switch-3">Turn on/off Light 3:</label>
+                <input type="checkbox" id="light-switch-3">
+                <p id="light-status-3" class="light-status"></p>
+            </div>
+        </section>
+        <section id="thermostat-control">
+            <h2>Thermostat Control</h2>
+            <label for="temperature-input">Set temperature (10-30°C):</label>
+            <input type="number" id="temperature-input" min="10" max="30" placeholder="Enter temperature">
+            <button id="set-temperature-btn">Set</button>
+            <p id="temperature-status"></p>
+        </section>
+        <section id="sustainability-tips">
+            <h2>Sustainability Tips</h2>
+            <p id="tip"></p>
+        </section>
+        <section id="consumption-report">
+            <h2>Consumption Report</h2>
+            <div id="report"></div>
+        </section>
+    </main>
+    <footer>
+        <p>2024 Building/Home Automation App</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
