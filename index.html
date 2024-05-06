@@ -5,34 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Building/Home Automation App</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 <body>
     <header>
         <h1>Building/Home Automation App</h1>
+        <button id="dark-mode-toggle">Dark Mode</button>
     </header>
     <main>
+        <!-- Energy Monitor Section -->
         <section id="energy-monitor">
             <h2>Energy Monitor</h2>
             <p id="energy-usage"></p>
+            <canvas id="consumption-chart"></canvas>
+            <button id="view-report-btn" onclick="window.location.href = 'report.html';">View Full Report</button>
         </section>
+
+        <!-- Lighting Control Section -->
         <section id="lighting-control">
             <h2>Lighting Control</h2>
+            <!-- Light Control 1 -->
             <div class="light-control">
-                <label for="light-switch-1">Turn on/off Light 1:</label>
+                <label for="light-switch-1">Living Room:</label>
                 <input type="checkbox" id="light-switch-1">
-                <p id="light-status-1" class="light-status"></p>
+                <span id="light-status-1" class="light-status"></span>
             </div>
+            <!-- Light Control 2 -->
             <div class="light-control">
-                <label for="light-switch-2">Turn on/off Light 2:</label>
+                <label for="light-switch-2">Bedroom:</label>
                 <input type="checkbox" id="light-switch-2">
-                <p id="light-status-2" class="light-status"></p>
+                <span id="light-status-2" class="light-status"></span>
             </div>
+            <!-- Light Control 3 -->
             <div class="light-control">
-                <label for="light-switch-3">Turn on/off Light 3:</label>
+                <label for="light-switch-3">Kitchen:</label>
                 <input type="checkbox" id="light-switch-3">
-                <p id="light-status-3" class="light-status"></p>
+                <span id="light-status-3" class="light-status"></span>
             </div>
         </section>
+
+        <!-- Thermostat Control Section -->
         <section id="thermostat-control">
             <h2>Thermostat Control</h2>
             <label for="temperature-input">Set temperature (10-30°C):</label>
@@ -40,13 +53,13 @@
             <button id="set-temperature-btn">Set</button>
             <p id="temperature-status"></p>
         </section>
+
+        <!-- Sustainability Tips Section -->
         <section id="sustainability-tips">
             <h2>Sustainability Tips</h2>
-            <p id="tip"></p>
-        </section>
-        <section id="consumption-report">
-            <h2>Consumption Report</h2>
-            <div id="report"></div>
+            <div class="tip-container">
+                <p id="tip" class="tip-content"></p>
+            </div>
         </section>
     </main>
     <footer>

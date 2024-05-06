@@ -1,3 +1,11 @@
+/* styles.css */
+:root {
+    --primary-color: #007bff;
+    --background-color: #f7f7f7;
+    --text-color: #333;
+    --footer-background-color: #333;
+    --footer-text-color: #fff;
+}
 
 * {
     box-sizing: border-box;
@@ -7,14 +15,29 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f7f7f7;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
 header, footer {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--footer-background-color);
+    color: var(--footer-text-color);
     text-align: center;
     padding: 1rem 0;
+}
+
+#dark-mode-toggle {
+    background: none;
+    border: 2px solid var(--footer-text-color);
+    color: var(--footer-text-color);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#dark-mode-toggle:hover {
+    background-color: var(--footer-text-color);
+    color: var(--footer-background-color);
 }
 
 main {
@@ -28,11 +51,12 @@ section {
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     padding: 2rem;
+    margin-bottom: 1rem;
 }
 
 h2 {
     margin-bottom: 1.5rem;
-    color: #333;
+    color: var(--text-color); 
 }
 
 label {
@@ -53,7 +77,7 @@ input[type="checkbox"], input[type="number"] {
 }
 
 input[type="checkbox"]:checked {
-    border-color: #007bff;
+    border-color: var(--primary-color);
 }
 
 .light-status {
@@ -64,15 +88,13 @@ input[type="checkbox"]:checked {
     vertical-align: middle;
 }
 
-
-
 input[type="number"] {
     width: 100px;
 }
 
 button {
     padding: 0.75rem 1.5rem;
-    background-color: #007bff;
+    background-color: var(--primary-color);
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -84,9 +106,51 @@ button:hover {
     background-color: #0056b3;
 }
 
-
 footer {
-    position: fixed;
-    bottom: 0;
     width: 100%;
+    padding: 1rem 0;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    --background-color: #121212;
+    --text-color: #121212;
+    --footer-background-color: #1c1c1c;
+    --footer-text-color: #ffffff;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.tip-container {
+    overflow: hidden;
+}
+
+.tip-content {
+    animation: slide-in 0.5s ease-out;
+}
+#view-report-btn {
+    padding: 0.75rem 1.5rem;
+    margin-top: 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#view-report-btn:hover {
+    background-color: #0056b3;
 }
